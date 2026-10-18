@@ -24,11 +24,12 @@ Zmiany między gałęziami pokaż tak:
 ```powershell
 git show feature_1:main.txt
 git show feature_2:main.txt
-git show release:main.txt
+git show v1.0.0.0:main.txt
 ```
 
-`main.txt` jest małym plikiem do ćwiczenia gałęzi. Kod Django jest na każdej taki sam.
-Plik `pierwszy.cpp` to przykład z instrukcji Gita, nie część aplikacji Django.
+`main.txt` był małym plikiem do ćwiczenia gałęzi. Przykłady zostały usunięte
+z bieżącego folderu, ale są w historii. Pokazujesz je poleceniem `git show`.
+Kod Django jest na każdej gałęzi taki sam.
 
 ## .gitignore
 
@@ -36,12 +37,12 @@ W `.gitignore` są pliki pomijane przez Git: środowisko `.venv`, baza SQLite,
 pliki tymczasowe, archiwa i PDF-y. Reguła `*.cpp` pokazuje przykład z instrukcji:
 
 ```powershell
-git ls-files pierwszy.cpp
-git check-ignore drugi.cpp
+git show v1.0.0.0:pierwszy.cpp
+git check-ignore przyklad.cpp
 ```
 
-Pierwszy plik został zapisany przed dodaniem reguły i nadal jest śledzony.
-Drugi, dodany później, jest ignorowany. Możesz utworzyć kolejny `.cpp`, żeby to pokazać.
+Pierwsze polecenie pokazuje plik zapisany przed dodaniem reguły.
+Drugie pokazuje, że nowy plik `.cpp` będzie ignorowany. Nie musisz go tworzyć.
 
 ## Zapisanie kolejnej zmiany
 

@@ -37,7 +37,6 @@ GET pokazuje stronę lub formularz, POST przesyła dane do zapisania.
 
 Wiadomości są przykładem z materiałów, a Zadania własną aplikacją z jednym polem.
 Wylogowanie i edycja wiadomości realizują pozostałe punkty zadania.
-Zrzuty do oddania są w folderze `zrzuty`.
 
 ## Git
 
