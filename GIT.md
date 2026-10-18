@@ -58,27 +58,23 @@ git status
 Przygotowane są też skróty `git st` (status) i `git hist` (historia).
 Jeśli chcesz okno z historią, użyj `gitk --all`.
 
-## GitHub - do wykonania po utworzeniu repozytorium
+## GitHub
 
-Lokalna historia jest gotowa. Nie została wysłana na GitHub.
+Repozytorium: https://github.com/WikPan/django-laboratorium
 
-1. Zaloguj się na https://github.com i wybierz **New repository**.
-2. Nazwij je np. `django-laboratorium`. Wybierz widoczność według potrzeb.
-3. Zostaw puste opcje tworzenia README, .gitignore i licencji, po czym utwórz repozytorium.
-4. Skopiuj jego adres HTTPS i wstaw w poleceniu zamiast `ADRES_REPOZYTORIUM`:
+Wysłane są gałęzie master, develop, feature_1, feature_2, feature_3 i release
+oraz tag v1.0.0.0. Adres `origin` jest już ustawiony. Możesz go sprawdzić:
 
 ```powershell
-git remote add origin ADRES_REPOZYTORIUM
-git push -u origin master
-git push -u origin develop
-git push -u origin feature_1
-git push -u origin feature_2
-git push -u origin feature_3
-git push -u origin release
-git push origin --tags
+git remote -v
 ```
 
-GitHub może poprosić o zalogowanie w przeglądarce.
+Jeżeli `origin` istnieje i ma błędny adres, zmieniasz go przez `set-url`:
+
+```powershell
+git remote set-url origin https://github.com/WikPan/django-laboratorium.git
+```
+
 Późniejsze zmiany na aktualnej gałęzi wysyłasz przez `git push`.
 `git fetch` pobiera informacje i obiekty ze zdalnego repozytorium bez zmiany plików roboczych.
 `git pull` pobiera zmiany i włącza je do aktualnej gałęzi.
@@ -86,9 +82,8 @@ Późniejsze zmiany na aktualnej gałęzi wysyłasz przez `git push`.
 Żeby pokazać klonowanie, otwórz terminal w innym folderze i wykonaj:
 
 ```powershell
-git clone ADRES_REPOZYTORIUM Django-kopia
+git clone https://github.com/WikPan/django-laboratorium.git Django-kopia
 ```
 
 Do sprawozdania zrób zrzut historii, gałęzi, taga i repozytorium na GitHubie.
 Dodaj też zrzuty samodzielnie wykonywanych etapów, w tym rozwiązywania konfliktu.
-Samo lokalne repozytorium nie kończy części zadania dotyczącej GitHuba.
