@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Wiadomości</h1>
+{% if user.is_authenticated %}
+    <p><a href="{% url 'news_add' %}">Dodaj wiadomość</a></p>
+{% else %}
+    <p>Zaloguj się, aby dodawać i edytować wiadomości.</p>
+{% endif %}
+<ul>
+{% for n in news %}
+    <li><a href="{% url 'news_detail' n.id %}">{{ n.topic }}</a> ({{ n.author }})</li>
+{% empty %}
+    <li>Brak wiadomości.</li>
+{% endfor %}
+</ul>
+{% endblock %}

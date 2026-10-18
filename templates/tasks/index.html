@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Zadania</h1>
+<p><a href="{% url 'task_add' %}">Dodaj zadanie</a></p>
+<ul>
+{% for task in tasks %}
+    <li>
+        {{ task.title }}
+        <a href="{% url 'task_edit' task.id %}">Edytuj</a>
+        <a href="{% url 'task_delete' task.id %}">Usuń</a>
+    </li>
+{% empty %}
+    <li>Brak zadań.</li>
+{% endfor %}
+</ul>
+{% endblock %}

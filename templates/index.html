@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Prosty przykład Django</h1>
+<p>Wiadomości można czytać bez logowania. Dodawanie i edycja wymagają logowania.</p>
+<p>Lista zadań jest dostępna po zalogowaniu. Można dodawać, edytować i usuwać zadania.</p>
+<ul>
+    <li><a href="{% url 'view_news' %}">Pokaż wiadomości</a></li>
+    <li><a href="{% url 'tasks' %}">Pokaż zadania</a></li>
+</ul>
+{% endblock %}

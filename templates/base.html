@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Django - prosty przykład</title>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'home' %}">Start</a> |
+        <a href="{% url 'view_news' %}">Wiadomości</a> |
+        <a href="{% url 'tasks' %}">Zadania</a> |
+        {% if user.is_authenticated %}
+            Zalogowany: <strong>{{ user.username }}</strong>
+            <form action="{% url 'logout' %}" method="post" style="display: inline;">
+                {% csrf_token %}
+                <button type="submit">Wyloguj</button>
+            </form>
+        {% else %}
+            Gość | <a href="{% url 'login' %}">Zaloguj</a>
+        {% endif %}
+    </nav>
+    <hr>
+    <main>{% block content %}{% endblock %}</main>
+</body>
+</html>

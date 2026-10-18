@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ news.topic }}</h1>
+<p>{{ news.text }}</p>
+<p>Autor: {{ news.author }}</p>
+<p>Utworzono: {{ news.create_time|date:"d.m.Y H:i:s" }}</p>
+<p>Ostatnia edycja: {{ news.last_edit_time|date:"d.m.Y H:i:s" }}</p>
+{% if user.is_authenticated %}
+    <p><a href="{% url 'news_edit' news.id %}">Edytuj wiadomość</a></p>
+{% endif %}
+<p><a href="{% url 'view_news' %}">Powrót do listy</a></p>
+{% endblock %}
